@@ -15,15 +15,14 @@ export const Element = styled.div`
 `;
 
 export const College = styled.a`
-  display:flex;
-  padding:1em;  
-`
+  display: flex;
+  padding: 1em;
+`;
 export const Search = styled.div`
-  display:flex;
-  justify-content:space-between;
+  display: flex;
+  justify-content: space-between;
   margin-left: 0.5em;
 `;
-
 
 export const Heading = styled.div`
   font-size: 20px;

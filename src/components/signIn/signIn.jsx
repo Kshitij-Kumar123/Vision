@@ -11,7 +11,7 @@ import {
   Textbox,
   SignInText,
   ForgotPassword,
-  BottomLinkText
+  BottomLinkText,
 } from "../register/registerStyles";
 import { Link, useHistory } from "react-router-dom";
 
@@ -66,7 +66,10 @@ export const SignIn = (props) => {
           </CardContent>
         </DarkPinkCard>
         <SignInText>
-          Don't have an account? <Link to="/register"><BottomLinkText>Sign Up</BottomLinkText></Link>
+          Don't have an account?{" "}
+          <Link to="/register">
+            <BottomLinkText>Sign Up</BottomLinkText>
+          </Link>
         </SignInText>
       </ContentWrapper>
     </RegisterContainer>

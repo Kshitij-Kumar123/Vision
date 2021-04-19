@@ -10,7 +10,7 @@ import {
   WhiteFormLabel,
   Textbox,
   SignInText,
-  BottomLinkText
+  BottomLinkText,
 } from "./registerStyles";
 import { Link, useHistory } from "react-router-dom";
 import { useAuth } from "../../contexts/AuthContext";
@@ -34,7 +34,7 @@ export const Register = (props) => {
       setError("");
       setLoading(true);
       await signUp(emailRef.current.value, passwordRef.current.value);
-      history.push("/signin")
+      history.push("/signin");
     } catch {
       setError("Failed to create account");
     }
@@ -72,7 +72,10 @@ export const Register = (props) => {
           </CardContent>
         </DarkPinkCard>
         <SignInText>
-          Already Have an account? <Link to="/signin"><BottomLinkText>Sign In</BottomLinkText></Link>
+          Already Have an account?{" "}
+          <Link to="/signin">
+            <BottomLinkText>Sign In</BottomLinkText>
+          </Link>
         </SignInText>
       </ContentWrapper>
     </RegisterContainer>

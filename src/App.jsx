@@ -5,7 +5,7 @@ import { Register } from "./components/register/register.jsx";
 import { List } from "./components/list/list";
 import { ForgotPassword } from "./components/forgot-password/forgotPassword";
 import { AuthProvider } from "./contexts/AuthContext";
-import  PrivateRoute  from "./components/PrivateRoute";
+import PrivateRoute from "./components/PrivateRoute";
 
 function App() {
   return (

@@ -86,4 +86,4 @@ export const SubmitButton = styled(Button)`
 export const BottomLinkText = styled.span`
   color: white;
   font-weight: bold;
-`
+`;

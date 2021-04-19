@@ -20,7 +20,7 @@ export const Card = styled.div`
   background: white;
   margin: 1em;
   max-width: 100rem;
-  justify-content:space-around;
+  justify-content: space-around;
   @media only screen and (max-width: ${mobileSize}) {
     flex-direction: column;
     padding: 1em;
@@ -49,8 +49,8 @@ export const Content = styled.div`
   color: ${(props) => props.color};
   font-weight: 700;
   margin: 0.2em 0;
-  display:flex;
-  align-items:center;
+  display: flex;
+  align-items: center;
 `;
 export const SubCard = styled.div`
   display: flex;
@@ -82,9 +82,9 @@ export const Information = styled.div`
   display: flex;
   flex-direction: column;
   margin-right: 2rem;
-  width:33%;
+  width: 33%;
   @media only screen and (max-width: ${mobileSize}) {
-    width:100%;
+    width: 100%;
   }
 `;
 export const Heading = styled.div`

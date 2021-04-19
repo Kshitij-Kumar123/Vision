@@ -9,7 +9,7 @@ export default function Navbar(props) {
   const [error, setError] = useState("");
   const { logout, currentUser } = useAuth();
   const history = useHistory();
-  
+
   const { displayName, email } = currentUser;
 
   const handleLogOut = async () => {
@@ -24,12 +24,15 @@ export default function Navbar(props) {
   return (
     <Container>
       <Title>
-        <a href='/'>Vision</a>
+        <a href="/">Vision</a>
       </Title>
       {error && <Alert variant="warning">{error}</Alert>}
       <div>
         <Dropdown>
-          <Dropdown.Toggle variant="danger" style={{backgroundColor:'#f06b6b', border: 'none'}}>
+          <Dropdown.Toggle
+            variant="danger"
+            style={{ backgroundColor: "#f06b6b", border: "none" }}
+          >
             <FaUserCircle style={{ fontSize: "2em" }} />
           </Dropdown.Toggle>
           <Dropdown.Menu>
