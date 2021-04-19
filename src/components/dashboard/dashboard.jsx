@@ -37,6 +37,11 @@ export const Dashboard = ({ ...props }) => {
     <DashboardCard college={val} key={index} />
   ));
 
+  const gray = "#ccc";
+  const darkpink = "#853F3F";
+  const lightpink = "#F06B6B";
+  const palepink = "#f2b8b8";
+  
   return (
     <>
       <Navbar />
@@ -45,7 +50,7 @@ export const Dashboard = ({ ...props }) => {
         <Link to="/list">
           <AddCard>
             <AddSubCard>
-              <RiAddCircleFill style={{ fontSize: "4em", color: "#F06B6B" }} />
+              <RiAddCircleFill style={{ fontSize: "4em", color: lightpink }} />
             </AddSubCard>
           </AddCard>
         </Link>

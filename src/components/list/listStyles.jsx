@@ -10,6 +10,7 @@ export const Container = styled.div`
     margin: 2rem 1rem;
   }
 `;
+
 export const Element = styled.div`
   margin: 0.5em;
 `;
@@ -18,6 +19,7 @@ export const College = styled.a`
   display: flex;
   padding: 1em;
 `;
+
 export const Search = styled.div`
   display: flex;
   justify-content: space-between;

@@ -24,6 +24,9 @@ export default function DashboardCard({ college, ...props }) {
 
   const iconStyle = { fontSize: "24px", margin: "0px 10px" };
   const db = firebase.firestore();
+  const trashRed = "#a83a32";
+  const lightBlue = "#46b3e6";
+  const brightGreen = "#30c735";
 
   const deleteCollege = () => {
     db.collection("users")
@@ -54,7 +57,7 @@ export default function DashboardCard({ college, ...props }) {
             Edit this information
           </a>
         </Content>
-        <Content color={"#a83a32"} onClick={deleteCollege}>
+        <Content color={trashRed} onClick={deleteCollege}>
           <BsTrashFill style={iconStyle} />
           Delete
         </Content>
@@ -66,16 +69,16 @@ export default function DashboardCard({ college, ...props }) {
           <SiGooglescholar style={iconStyle} /> Acceptance Rate:{" "}
           {ADM_RATE_ALL * 100}%{" "}
         </Content>
-        <Content color={"#46b3e6"}>
+        <Content color={lightBlue}>
           {" "}
           <MdMonetizationOn style={iconStyle} /> Average Yearly Tuition: $
           {AVG_COST}
         </Content>
-        <Content color={"#30c735"}>
+        <Content color={brightGreen}>
           {" "}
           <BsBookHalf style={iconStyle} /> Average ACT Score: {ACT_AVG}
         </Content>
-        <Content color={"#30c735"}>
+        <Content color={brightGreen}>
           {" "}
           <BsBookHalf style={iconStyle} /> Average SAT Score: {SAT_AVG_ALL}
         </Content>

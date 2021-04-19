@@ -1,5 +1,5 @@
 import React, { useState, useRef } from "react";
-import { Alert, Form, FormControl } from "react-bootstrap";
+import { Alert, Form } from "react-bootstrap";
 import {
   RegisterContainer,
   DarkPinkCard,
@@ -13,7 +13,7 @@ import {
   BottomLinkText,
 } from "../register/registerStyles";
 import { GrayText } from "./forgotPasswordStyles";
-import { Link, useHistory } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 import { useAuth } from "../../contexts/AuthContext";
 

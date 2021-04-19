@@ -12,6 +12,8 @@ export default function Navbar(props) {
 
   const { displayName, email } = currentUser;
 
+  const lightpink = "#F06B6B";
+
   const handleLogOut = async () => {
     setError("");
     try {
@@ -31,7 +33,7 @@ export default function Navbar(props) {
         <Dropdown>
           <Dropdown.Toggle
             variant="danger"
-            style={{ backgroundColor: "#f06b6b", border: "none" }}
+            style={{ backgroundColor: { lightpink }, border: "none" }}
           >
             <FaUserCircle style={{ fontSize: "2em" }} />
           </Dropdown.Toggle>
