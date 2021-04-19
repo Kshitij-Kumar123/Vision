@@ -19,11 +19,12 @@ import { useAuth } from "../../contexts/AuthContext";
 
 export const ForgotPassword = (props) => {
   const emailRef = useRef();
-
   const { resetPassword } = useAuth();
+  
   const [error, setError] = useState("");
   const [message, setMessage] = useState("");
   const [loading, setLoading] = useState(false);
+
   const handleSubmit = async (e) => {
     e.preventDefault();
 

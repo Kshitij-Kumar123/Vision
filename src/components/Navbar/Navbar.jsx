@@ -5,7 +5,8 @@ import { useHistory } from "react-router-dom";
 import { useAuth } from "../../contexts/AuthContext.js";
 import { Alert, Dropdown } from "react-bootstrap";
 
-export default function Navbar(props) {
+export default function Navbar() {
+  
   const [error, setError] = useState("");
   const { logout, currentUser } = useAuth();
   const history = useHistory();

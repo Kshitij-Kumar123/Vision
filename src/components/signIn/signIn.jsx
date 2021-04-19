@@ -1,5 +1,5 @@
 import React, { useState, useRef } from "react";
-import { Alert, Form, FormControl } from "react-bootstrap";
+import { Alert, Form } from "react-bootstrap";
 import {
   RegisterContainer,
   DarkPinkCard,
@@ -25,6 +25,7 @@ export const SignIn = (props) => {
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
   const history = useHistory();
+  
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -39,6 +40,7 @@ export const SignIn = (props) => {
 
     setLoading(false);
   };
+  
   return (
     <RegisterContainer>
       <ContentWrapper classname="w-100">
