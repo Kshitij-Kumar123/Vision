@@ -88,6 +88,7 @@ export default function ListCard({ collegeId, ...props }) {
         });
     }
   }, []);
+  const lightpink = "#F06B6B";
 
   console.log(selectedCollege?.["INSTNM"]);
   return (
@@ -101,7 +102,7 @@ export default function ListCard({ collegeId, ...props }) {
               onChange={(e) => setInputValue(e.target.value)}
               value={selectedCollege?.["INSTNM"]}
             />
-            <Button style={{ marginLeft: "0.5em" }} onClick={handleFilter}>
+            <Button color="danger" style={{ marginLeft: "0.5em" }} onClick={handleFilter}>
               {" "}
               Submit{" "}
             </Button>
@@ -152,7 +153,7 @@ export default function ListCard({ collegeId, ...props }) {
         <FormGroup>
           <Heading>Acceptance %</Heading>
           <Input
-            value={selectedCollege?.["ADM_RATE_ALL"]}
+            value={selectedCollege?.["ADM_RATE_ALL"]*100}
             onChange={(e) => handleChange(e.target.value, "ADM_RATE_ALL")}
           />
         </FormGroup>

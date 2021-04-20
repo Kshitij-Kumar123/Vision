@@ -1,9 +1,12 @@
+import { RiAddCircleFill } from "react-icons/ri";
 import styled from "styled-components";
 
 const mobileSize = "768px";
 const white = "#fff";
 const black = "#000";
 const darkgray = "#767676";
+const lightpink = "#F06B6B";
+const darkpink = "#853F3F";
 
 export const Container = styled.div`
   margin: 5rem 7rem;
@@ -15,7 +18,6 @@ export const Container = styled.div`
 `;
 
 export const Card = styled.div`
-  border: 1px solid ${black};
   border-radius: 2rem;
   display: flex;
   min-height: 8rem;
@@ -29,10 +31,13 @@ export const Card = styled.div`
     padding: 1em;
     justify-content: center;
   }
+  box-shadow: 0px 6px 6px rgba(0, 0, 0, 0.14), 0px 6px 9px rgba(0, 0, 0, 0.12),
+    6px 6px 9px rgba(0, 0, 0, 0.2);
+    background-color: #f0f0f0;
 `;
 
 export const AddCard = styled.div`
-  border: 2px dashed ${black};
+  border: 2px dashed ${lightpink};
   border-radius: 1rem;
   display: flex;
   min-height: 10rem;
@@ -46,6 +51,9 @@ export const AddCard = styled.div`
     padding: 1em;
     justify-content: center;
   }
+  box-shadow: 0px 6px 6px rgba(0, 0, 0, 0.14), 0px 6px 9px rgba(0, 0, 0, 0.12),
+    6px 6px 9px rgba(0, 0, 0, 0.2);
+  background-color: ${darkpink};
 `;
 
 export const Content = styled.div`
@@ -55,6 +63,13 @@ export const Content = styled.div`
   margin: 0.2em 0;
   display: flex;
   align-items: center;
+`;
+
+export const IconContent = styled(Content)`
+  &:hover {
+    cursor: pointer;
+    text-decoration: none;
+  }
 `;
 
 export const SubCard = styled.div`
@@ -136,4 +151,9 @@ export const AddData = styled.div`
   font-size: 14px;
   border: 2px dashed ${darkgray};
   border-radius: 4px;
+`;
+
+export const AddPlus = styled(RiAddCircleFill)`
+  font-size: 6rem;
+  color: ${lightpink};
 `;

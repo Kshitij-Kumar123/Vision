@@ -35,17 +35,18 @@ export const Heading = styled.div`
 `;
 
 export const Card = styled.div`
-  border: 1px solid black;
   border-radius: 1rem;
   display: flex;
   padding: 1.2em;
   background: white;
   margin: 1em;
-  max-width: 100rem;
+  max-width: 50rem;
   flex-direction: column;
   justify-content: space-between;
   @media only screen and (max-width: ${mobileSize}) {
     padding: 1em;
     justify-content: center;
   }
+  box-shadow: 0px 6px 6px rgba(0, 0, 0, 0.14), 0px 6px 9px rgba(0, 0, 0, 0.12),
+    6px 6px 9px rgba(0, 0, 0, 0.2);
 `;

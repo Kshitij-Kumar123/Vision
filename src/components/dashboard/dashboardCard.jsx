@@ -1,5 +1,5 @@
 import React from "react";
-import { Content, Card, Information } from "./dasboardStyle.jsx";
+import { Content, Card, Information, IconContent } from "./dasboardStyle.jsx";
 import { HiLocationMarker } from "react-icons/hi";
 import { SiGooglescholar } from "react-icons/si";
 import { MdMonetizationOn } from "react-icons/md";
@@ -50,17 +50,16 @@ export default function DashboardCard({ college, ...props }) {
           {" "}
           <HiLocationMarker style={iconStyle} /> {CITY}, {STABBR}{" "}
         </Content>
-        <Content>
+        <IconContent>
           {" "}
           <a href={`/list/${DOCUMENT_ID}`}>
             <FaEdit style={iconStyle} />
-            Edit this information
           </a>
-        </Content>
-        <Content color={trashRed} onClick={deleteCollege}>
+        </IconContent>
+
+        <IconContent color={trashRed} onClick={deleteCollege}>
           <BsTrashFill style={iconStyle} />
-          Delete
-        </Content>
+        </IconContent>
       </Information>
       {/* information about the academics focused info */}
       <Information>
@@ -84,7 +83,7 @@ export default function DashboardCard({ college, ...props }) {
         </Content>
       </Information>
       <Information>
-        <Content>{ADD_NOTES ?? `none`}</Content>
+        <Content>{ADD_NOTES ?? ""}</Content>
       </Information>
     </Card>
   );

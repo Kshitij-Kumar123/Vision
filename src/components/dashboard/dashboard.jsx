@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Container, AddCard, AddSubCard } from "./dasboardStyle.jsx";
+import { Container, AddCard, AddSubCard, AddPlus } from "./dasboardStyle.jsx";
 import { RiAddCircleFill } from "react-icons/ri";
 import DashboardCard from "./dashboardCard.jsx";
 import { Link } from "react-router-dom";
@@ -36,11 +36,6 @@ export const Dashboard = ({ ...props }) => {
   const collegeCards = colleges.map((val, index) => (
     <DashboardCard college={val} key={index} />
   ));
-
-  const gray = "#ccc";
-  const darkpink = "#853F3F";
-  const lightpink = "#F06B6B";
-  const palepink = "#f2b8b8";
   
   return (
     <>
@@ -50,7 +45,7 @@ export const Dashboard = ({ ...props }) => {
         <Link to="/list">
           <AddCard>
             <AddSubCard>
-              <RiAddCircleFill style={{ fontSize: "4em", color: lightpink }} />
+              <AddPlus />
             </AddSubCard>
           </AddCard>
         </Link>
