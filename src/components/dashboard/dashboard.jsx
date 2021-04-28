@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
-import { Container, AddCard, AddSubCard, AddPlus } from "./dasboardStyle.jsx";
+import { AddSubCard, AddPlus } from "./dasboardStyle.jsx";
+import { Container, AddCard, SubContainer } from "./newDashboardStyle.jsx";
 import { RiAddCircleFill } from "react-icons/ri";
 import DashboardCard from "./dashboardCard.jsx";
 import { Link } from "react-router-dom";
@@ -36,19 +37,44 @@ export const Dashboard = ({ ...props }) => {
   const collegeCards = colleges.map((val, index) => (
     <DashboardCard college={val} key={index} />
   ));
-  
+
   return (
     <>
       <Navbar />
       <Container>
-        {collegeCards}
-        <Link to="/list">
+        <SubContainer>
+          <h3>Your List</h3>
+        </SubContainer>
+        <SubContainer>
+          {/* if the results are still being fetched, show loading  */}
+          {/* if results are fetched, show results else show nothing */}
+          {/* {loading ? (
+            <LoadingCard />
+          ) : (
+            !loading && colleges.length > 0 && collegeCards
+          )} */}
+          {colleges.length > 0 && collegeCards}
           <AddCard>
-            <AddSubCard>
-              <AddPlus />
-            </AddSubCard>
+            <Link to="/list">
+              <RiAddCircleFill style={{ fontSize: "4em", color: "#F06B6B" }} />
+            </Link>
           </AddCard>
-        </Link>
+        </SubContainer>
+        <SubContainer>
+          <h3>College Recommendations</h3>
+        </SubContainer>
+        <SubContainer>
+          {/* if the results are still being fetched, show loading  */}
+          {/* if results are fetched but empty, show statement */}
+          {/* else, show all results */}
+          {/* {loading ? (
+            <LoadingCard recommendation={true} />
+          ) : !loading && recommendations.length === 0 ? (
+            <h4>Add colleges to your list to help you get the best matches</h4>
+          ) : (
+            recommendationCard
+          )} */}
+        </SubContainer>
       </Container>
     </>
   );
