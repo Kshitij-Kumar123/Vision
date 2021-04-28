@@ -7,7 +7,15 @@ import { FaEdit } from "react-icons/fa";
 import firebase from "firebase";
 import { auth } from "../../firebase";
 import { BsBookHalf, BsTrashFill } from "react-icons/bs";
-
+import {
+  Header,
+  SubData,
+  Stats,
+  AddIcon,
+  WebsiteIcon,
+  EditIcon,
+  DeleteIcon,
+} from "./newDashboardStyle.jsx";
 export default function DashboardCard({ college, ...props }) {
   const {
     DOCUMENT_ID,
@@ -42,49 +50,53 @@ export default function DashboardCard({ college, ...props }) {
   };
   return (
     <Card>
-      <Information>
-        <Content>
-          <h3>{INSTNM}</h3>
-        </Content>
-        <Content>
-          {" "}
-          <HiLocationMarker style={iconStyle} /> {CITY}, {STABBR}{" "}
-        </Content>
-        <IconContent>
-          {" "}
-          <a href={`/list/${DOCUMENT_ID}`}>
-            <FaEdit style={iconStyle} />
-          </a>
-        </IconContent>
+  <>
+    <Header>
+      <div>
+        {INSTNM}
+        <a href={`https://${INSTURL}`}>
+          <WebsiteIcon />
+        </a>
+      </div>
+      <div>
+        <HiLocationMarker /> {CITY}, {STABBR}
+      </div>
+    </Header>
+    <SubData>
+      <Stats>
+        <div>Acceptance Rate</div>
+        <div>{(ADM_RATE_ALL * 100).toFixed(2)}%</div>
+      </Stats>
+      {/* avg cost is a value which depends person to person so recommendation cards do not have avg_cost */}
+      {AVG_COST && (
+        <Stats>
+          <div>Your cost after aid</div>
+          <div>${parseInt(AVG_COST)}</div>
+        </Stats>
+      )}
+      <Stats>
+        <div>Avg ACT</div>
+        <div>{Math.floor(ACT_AVG)}</div>
+      </Stats>
+      <Stats>
+        <div>Avg SAT</div>
+        <div>{SAT_AVG_ALL}</div>
+      </Stats>
+    </SubData>
 
-        <IconContent color={trashRed} onClick={deleteCollege}>
-          <BsTrashFill style={iconStyle} />
-        </IconContent>
-      </Information>
-      {/* information about the academics focused info */}
-      <Information>
-        <Content>
-          {" "}
-          <SiGooglescholar style={iconStyle} /> Acceptance Rate:{" "}
-          {ADM_RATE_ALL * 100}%{" "}
-        </Content>
-        <Content color={lightBlue}>
-          {" "}
-          <MdMonetizationOn style={iconStyle} /> Average Yearly Tuition: $
-          {AVG_COST}
-        </Content>
-        <Content color={brightGreen}>
-          {" "}
-          <BsBookHalf style={iconStyle} /> Average ACT Score: {ACT_AVG}
-        </Content>
-        <Content color={brightGreen}>
-          {" "}
-          <BsBookHalf style={iconStyle} /> Average SAT Score: {SAT_AVG_ALL}
-        </Content>
-      </Information>
-      <Information>
-        <Content>{ADD_NOTES ?? ""}</Content>
-      </Information>
-    </Card>
+    <SubData>
+      <div>{ADD_NOTES ?? ""}</div>
+    </SubData>
+
+    <SubData>
+      <a href={`/list/${DOCUMENT_ID}`}>
+        <EditIcon />
+      </a>
+
+      <DeleteIcon onClick={deleteCollege} />
+    </SubData>
+  </>
+</Card>
   );
 }
+
